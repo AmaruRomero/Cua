@@ -1,1 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sistem
+{
+    public class Vehiculo 
+    {
+        public Vehiculo(string marca, int año)
+        {
+            Marca = marca;
+            Año = año;
+        }
+
+        public string Marca { get; set; }
+        public int Año { get; set; }
+        public class Motor
+        {
+            public void Encender()
+            {
+                Console.WriteLine("Motor encendido.");
+            }
+
+            public void Apagar()
+            {
+                Console.WriteLine("Motor apagado.");
+            }
+        }
+
+        public virtual void MostrarInfo()
+        {
+            Console.WriteLine($"Marca: {Marca}\nAño: {Año}");
+        }
+
+    }
+}
 
