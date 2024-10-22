@@ -37,3 +37,110 @@ namespace Sistem
     }
 }
 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sistem
+{
+    public class Auto : Vehiculo, IMantenimiento
+    {
+        public string Modelo { get; set; }
+        public string Dimension { get; set; }
+        public int Nivel_Seguridad { get; set; }
+        public Auto(string marca, int año, string modelo, string dimension, int nivel_seguridad) : base(marca,año)
+        {
+            Marca = marca;
+            Año = año;
+            Modelo = modelo;
+            Dimension = dimension;
+            Nivel_Seguridad = nivel_seguridad;
+        }
+
+        public override void MostrarInfo()
+        {
+            base.MostrarInfo();
+            Console.WriteLine($"El modelo del auto es {Modelo}\nLas dimensiones del auto son: {Dimension}\nSu nivel de segurdad es {Nivel_Seguridad}");
+        }
+        
+        public void RealizarMantenimiento()
+        {
+            Console.WriteLine("Se debe realizar mantenimiento al vehiculo");
+        }
+    }
+  
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sistem
+{
+    public class Moto : Vehiculo , IMantenimiento
+    {
+        public Moto(string marca, int año, string modelo, string dimension, int kmporhr, string tipo)
+            : base(marca, año)
+        {
+            Modelo = modelo;
+            Año = año;
+            Modelo = modelo;
+            Dimension = dimension;
+            Khxhr = kmporhr;
+            Tipo = tipo;
+        }
+
+        public string Modelo { get; set; }
+        public string Dimension { get; set; }
+        public int Khxhr { get; set; }
+        public string Tipo { get; set; }
+
+        public override void MostrarInfo()
+        {
+            base.MostrarInfo();
+            Console.WriteLine($"El modelo de la moto es {Modelo} \nSus dimensiones son: {Dimension} \nTiene un max de {Khxhr}Km por hora \n Y la moto es un {Tipo}");
+        }
+        public void RealizarMantenimiento()
+        {
+            Console.WriteLine("Se debe realizar mantenimiento al vehiculo");
+        }
+
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sistem
+{
+    public interface IMantenimiento
+    {
+        public void RealizarMantenimiento();
+    }
+}
+
+
+using System;
+using Sistem;
+
+namespace sistem
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            List<Vehiculo> vehiculos = new List<Vehiculo>();
+
+        }
+    }
+}
